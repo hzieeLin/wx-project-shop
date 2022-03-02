@@ -2,6 +2,7 @@
 // #ifndef VUE3
 import Vue from 'vue'
 import App from './App'
+import store from '@/store/store.js'
 import { $http } from '@escook/request-miniprogram'
 uni.$http = $http
 $http.baseUrl = 'https://api-hmugo-web.itheima.net'
@@ -21,7 +22,7 @@ uni.$showMsg = function(title = '数据加载失败！', duration = 1500) {
 	})
 }
 Vue.config.productionTip = false
-
+Vue.prototype.$store = store;
 App.mpType = 'app'
 
 const app = new Vue({
